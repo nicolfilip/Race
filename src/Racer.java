@@ -1,3 +1,5 @@
+//Nicol Filipchuk 206637985 and Yuval Malka 315402669
+
 public class Racer implements Runnable {
     private static int globalId=0;
     private int id;
@@ -7,19 +9,19 @@ public class Racer implements Runnable {
     private int distancePassed;
     private static int finishedPlaceOfRacer  = 0;
 
-    public void setSpeed(int speed) {
+    public void setSpeed(int speed) { // if the speed isn't between 1-10 print exception
         if (speed < 1 || speed > 10) {
             System.out.println("The speed must be between 1-10");
         }
         this.speed = speed;
     }
 
-    public Racer(int speed, Track track)  {
+    public Racer(int speed, Track track)  { // contractor
         setSpeed(speed);
         this.track= track;
         this.id= ++globalId;
     }
-    private static String getSuffix(int number) {
+    private static String getSuffix(int number) { // for the suffix of the places
 
         switch (number % 10) {
             case 1:
