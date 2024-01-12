@@ -1,5 +1,5 @@
 public class Racer implements Runnable {
-    private static int globalId=1;
+    private static int globalId=0;
     private int id;
     private int speed;
 
@@ -7,12 +7,15 @@ public class Racer implements Runnable {
     private int distancePassed;
     private static int finishedPlaceOfRacer  = 0;
 
+    public void setSpeed(int speed) {
+        if (speed < 1 || speed > 10) {
+            System.out.println("The speed must be between 1-10");
+        }
+        this.speed = speed;
+    }
 
     public Racer(int speed, Track track)  {
-//        if (speed< 1 || speed>10){
-//            throw new Exception("The speed must be between 1-10");
-//        }
-        this.speed= speed;
+        setSpeed(speed);
         this.track= track;
         this.id= ++globalId;
     }
