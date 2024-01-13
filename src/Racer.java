@@ -11,7 +11,7 @@ public class Racer implements Runnable {
 
     public void setSpeed(int speed) { // if the speed isn't between 1-10 print exception
         if (speed < 1 || speed > 10) {
-            System.out.println("The speed must be between 1-10");
+            System.out.println("The speed of racer " + ++globalId + " must be between 1-10");
         }
         this.speed = speed;
     }
